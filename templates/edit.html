@@ -1,0 +1,30 @@
+{% extends 'base_todo.html' %}
+{% block content %}
+{% load static %}
+
+    <div id="EditTask">
+        
+        <div class="bg">
+            <h2>Edit the Selected Task</h2>
+        </div>
+        <div class="edit">
+            
+            {% if instance %}
+            <form action="{% url 'todo:editedTask' id=instance.id %}" method="POST">
+                {% csrf_token %}
+                <div class="input">
+                    <input type="text" name="edited" id="edited" value="{{value}}" required />
+                </div>
+                <div class="button">
+                    <button type="submit">Submit Task</button>
+                </div>
+            </form>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <script src="{% static './js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static './js/edit.js' %}"></script>
+
+{% endblock %}

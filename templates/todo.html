@@ -1,0 +1,115 @@
+{% extends 'base_todo.html' %}
+{% block content %}
+{% load static %}
+
+    <div class="wrapper">
+        <div id="Todo">
+            <div class="head">
+                <h1>Active Tasks</h1>
+            </div>
+
+            <div class="tasks">
+                <div class="create">
+                    <form action="{% url 'todo:createTask' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="input">
+                            {{form.todo}}
+                        </div>
+                        <div class="button">
+                            <button type="submit">Add Task</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="Alltasks">
+
+                {% if request.user.is_authenticated %}
+                    {% for t in todo %}
+                    <div class="task">
+                        <div class="tick">
+                           
+                            <a href="{% url 'todo:completeTask' id=t.id %}" 
+                                style="text-decoration: none;">
+                            <div class="input">
+                                <div class="circle" title="mark as completed">
+                            
+                                </div>
+                            </div>
+                            </a>
+
+                            <div class="given">
+                                <i class="fa-solid fa-circle"></i>
+                                <h2>{{t.todo}}</h2>
+                            </div>
+                            
+                        </div>
+                        <div class="manage">
+                            <a href="{% url 'todo:editTask' t.id %}">
+                                <div class="logo" title="Edit Task">
+                                    <i class="fa-solid fa-pen-to-square fa-xl icon" style="color: rgb(15, 99, 245);"></i>
+                                </div> 
+                            </a>
+
+                                <a href="{% url 'todo:deleteTask' id=t.id %}">
+                                <div class="logo" title="Delete Task" style="cursor: pointer;">
+                                    <i class="fa-solid fa-trash fa-xl icon" style="color: #fd0808;"></i>
+                                </div>
+                                </a>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+
+                </div>  
+                
+            </div>
+        </div>
+
+        <div id="CompletedTodos">
+            <div class="head">
+                <h1>Completed Tasks</h1>
+            </div>
+            
+            <div class="bg">
+                <div class="deleteAll">
+                    <div class="button">
+                        <a href="{% url 'todo:deleteTasks' %}">
+                            <button>Clear All Tasks</button>
+                        </a>
+                    </div>
+                </div>
+
+                {% if request.user.is_authenticated %}
+                    {% for c in completed %}
+                    <div class="completedIt">
+                        <div class="left">
+                            <div class="input">
+                                <img src="{% static './images/tick.webp' %}" alt="tick">
+                            </div>
+                            <h2>{{c.todo}}</h2>
+                        </div>
+                        <div class="right">
+                            <a href="{% url 'todo:revertTask' id=c.id %}">
+                                <div class="logo" title="Revise Task">
+                                    <img src="{% static './images/revert.png' %}" alt="revert">
+                                </div>
+                            </a>
+
+                            <a href="{% url 'todo:deleteTask' id=c.id %}">
+                                <i class="fa-solid fa-trash fa-xl icon" style="color: #fd0808;" title="Delete Completed Task"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="{% static './js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static './js/todo.js' %}"></script>
+
+{% endblock %}

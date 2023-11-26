@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do</title>
+    <link rel="stylesheet" href="{% static './css/todo.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="shortcut icon" href="{% static './images/todo-favicon.png' %}" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <div class="left">
+            <div class="img">
+                <img src="{% static './images/todo-favicon.png' %}" alt="logo">
+            </div>
+            <h1>TO-DO APP</h1>
+        </div>
+
+        <div>
+            {% if message %}
+                <h2 style="color: green;font-size: 28px;">{{message}}</h2>
+            {% endif %}
+        </div>
+        
+        <div class="user">
+            {% if request.user.is_authenticated %}
+                <div class="person">
+                    <i class="fa-solid fa-user" style="color: #fcfcfd;"></i>
+                    <h2>{{request.user.full_name}}</h2>
+                </div>
+                <a href="{% url 'users:logout' %}">
+                    <div class="logout">
+                        <h2>Logout</h2>
+                        <div class="logo">
+                            <img src="{% static './images/logout.png' %}" alt="logout">
+                        </div>
+                    </div>
+                </a>
+            {% else %}
+            <a href="{% url 'users:login' %}">
+                <div class="logout">
+                    <h2 style="color: green;">Login</h2>
+                </div>
+            </a>
+            {% endif %}    
+        </div>
+    </header>
+
+    {% block content %} {% endblock %}
+
+</body>
+</html>    

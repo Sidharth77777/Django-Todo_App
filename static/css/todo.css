@@ -1,0 +1,372 @@
+* {
+  box-sizing: border-box;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 3px solid green;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: #201a30;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 10px 20px 10px 20px;
+}
+header .left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+header .left h1 {
+  color: #fff;
+}
+header .img img {
+  width: 100%;
+}
+header .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+header .user h2 {
+  color: #fff;
+}
+header .user .person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+header .user a {
+  text-decoration: none;
+}
+header .user .logout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+header .user .logout h2 {
+  color: red;
+}
+header .user .logout .logo {
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .user .logout .logo img {
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper #Todo {
+  min-width: 80%;
+  min-height: 50vh;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.wrapper #Todo .head {
+  width: 100%;
+  height: 80px;
+  background-color: #363942;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper #Todo .head h1 {
+  color: #fff;
+  font-size: 30px;
+}
+.wrapper #Todo .tasks {
+  width: 100%;
+  background-color: #f1f1d5;
+  min-height: 50vh;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  padding: 10px 20px 10px 20px;
+}
+.wrapper #Todo .tasks .create {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #aaaaaa;
+  padding-bottom: 30px;
+}
+.wrapper #Todo .tasks .create form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper #Todo .tasks .create form .button button {
+  width: 100%;
+  background-color: #27a744;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+  color: #fff;
+  font-size: 20px;
+}
+.wrapper #Todo .tasks .create .input {
+  width: 88%;
+  height: 50px;
+}
+.wrapper #Todo .tasks .create .input input {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  font-size: 21px;
+}
+.wrapper #Todo .tasks .task {
+  width: 100%;
+  border-bottom: 1px solid #aaaaaa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper #Todo .tasks .task:hover {
+  background-color: #efef86;
+}
+.wrapper #Todo .tasks .task .tick {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.wrapper #Todo .tasks .task .tick .given {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.wrapper #Todo .tasks .task .tick .given h2 {
+  font-size: 25px;
+}
+.wrapper #Todo .tasks .task .tick .input input {
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+}
+.wrapper #Todo .tasks .task .manage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+.wrapper #Todo .tasks .task .manage .logo .icon {
+  width: 100%;
+}
+
+#CompletedTodos {
+  min-width: 80%;
+  min-height: 50vh;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 100px;
+  background-color: #f1f1d5;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+}
+#CompletedTodos .head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #82b54e;
+  color: #fff;
+}
+#CompletedTodos .bg {
+  padding: 10px 20px 10px 20px;
+}
+#CompletedTodos .bg .completedIt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #aaaaaa;
+}
+#CompletedTodos .bg .completedIt:hover {
+  background-color: #9eba82;
+}
+#CompletedTodos .bg .completedIt .input {
+  width: 60px;
+}
+#CompletedTodos .bg .completedIt .input img {
+  width: 100%;
+}
+#CompletedTodos .bg .completedIt .left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+#CompletedTodos .bg .completedIt .left h2 {
+  color: green;
+  text-decoration: line-through;
+}
+#CompletedTodos .bg .completedIt .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+#CompletedTodos .bg .completedIt .right .logo {
+  width: 30px;
+}
+#CompletedTodos .bg .completedIt .right .logo img {
+  width: 100%;
+}
+#CompletedTodos .deleteAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #aaaaaa;
+}
+#CompletedTodos .deleteAll .button {
+  width: 30%;
+}
+#CompletedTodos .deleteAll .button button {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: red;
+  font-size: 28px;
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+  color: #fff;
+}
+
+#EditTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#EditTask .bg {
+  background-color: #201a30;
+  width: 80%;
+}
+#EditTask .bg h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+}
+#EditTask .edit {
+  min-height: 30vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 80%;
+  background-color: #f1f1d5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 50px;
+}
+#EditTask .edit form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+#EditTask .edit form .input {
+  width: 80%;
+  height: 50px;
+}
+#EditTask .edit form .input input {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid #000;
+  font-size: 21px;
+}
+#EditTask .edit form .button {
+  width: 20%;
+}
+#EditTask .edit form .button button {
+  width: 100%;
+  background-color: #27a744;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+  color: #fff;
+  font-size: 20px;
+}
+
+@media (max-width: 1160px) {
+  .tasks .create form {
+    gap: 10px;
+  }
+  .tasks .create .button {
+    width: 15%;
+  }
+}
+@media (max-width: 981px) {
+  .tasks .create .input {
+    width: 80%;
+  }
+  .tasks .create form {
+    gap: 10px;
+  }
+  .tasks .create .button {
+    width: 20%;
+  }
+}
+@media (max-width: 788px) {
+  .tasks .create .input {
+    width: 70%;
+  }
+  .tasks .create form {
+    gap: 10px;
+  }
+  .tasks .create .button {
+    width: 30%;
+  }
+}
+@media (max-width: 642px) {
+  .tasks .create .input {
+    width: 80%;
+  }
+  .tasks .create .input input {
+    font-size: 18px;
+  }
+  .tasks .create form {
+    gap: 10px;
+  }
+  .tasks .create .button {
+    width: 20%;
+  }
+}
+@media (max-width: 590px) {
+  .tasks .create .input {
+    width: 80%;
+  }
+  .tasks .create .input input {
+    font-size: 15px;
+  }
+  .tasks .create form {
+    gap: 10px;
+  }
+  .tasks .create .button {
+    width: 20%;
+  }
+}/*# sourceMappingURL=todo.css.map */

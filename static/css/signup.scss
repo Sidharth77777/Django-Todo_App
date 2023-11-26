@@ -1,0 +1,104 @@
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+@mixin flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body{
+    background-color: #fff;
+    min-height: 100vh;
+    min-width: 100%;
+    margin: 0;
+    @include center;
+}
+
+#SignUp{
+    color: #fff;
+    background-color: #201a30;
+    min-height: 80vh;
+    min-width: 50%;
+    overflow: hidden;
+    border-radius: 12px;
+    text-align: center;
+    padding: 30px 40px 30px 40px;
+    .img{
+        width: 180px;
+        margin: 0 auto;
+        img{
+            width: 100%; 
+            
+        }
+    }
+    h1{
+        font-size: 50px;
+    }
+    form{
+        .input{
+            width: 100%;
+            margin-top: 12px;
+            margin-bottom: 20px;
+            .font{
+                margin-right: 8px;
+            }
+            
+            input{
+                width: 80%;
+                padding:15px 8px 15px 8px;
+                background: none;
+                border-radius: 8px;
+                color: #fff;
+                border:1px solid #0df5e3;
+                font-size: 20px;
+            }
+        }
+        .flex{
+            width: 100%;
+            display: flex;
+            .opt{
+                min-width: 50%;
+                label{
+                    font-size: 20px; 
+                    color: #757575;
+                }
+                select{
+                    background: none;
+                    border: 1px solid #0df5e3;
+                    color: #fff;
+                    padding:10px 8px 10px 8px;
+                    border-radius: 8px;
+                    width: 50%;
+
+                    option{
+                        background: none;
+                        color: #000;
+                    }
+                }
+            }
+        }
+        .button{
+            
+            button{
+                width: 50%;
+                background-color: #0df5e3;
+                padding: 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 8px;
+                color: #000;
+                font-size: 20px;
+            }
+        }
+    }
+    h4{
+        color: #797878;
+        a{
+            text-decoration: none;
+            color:#0df5e3 ;
+        }
+    }
+}

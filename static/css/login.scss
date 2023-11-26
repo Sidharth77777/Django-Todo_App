@@ -1,0 +1,113 @@
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+}
+@mixin flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body{
+    background-color: #fff;
+    min-height: 100vh;
+    min-width: 100%;
+    margin: 0;
+    @include center;
+}
+
+#Login{
+    color: #fff;
+    background-color: #201a30;
+    min-height: 80vh;
+    min-width: 50%;
+    border-radius: 12px;
+    text-align: center;
+    padding: 30px 40px 30px 40px;
+
+    .img{
+        width: 150px;
+        margin: 0 auto;
+        img{
+            width: 100%; 
+            background: none;
+        }
+    }
+    
+    h1{
+        font-size: 58px;
+    }
+    form{
+        .input{
+            width: 100%;
+            margin-top: 12px;
+            margin-bottom: 20px;
+            .font{
+                margin-right: 8px;
+            }
+            
+            input{
+                width: 80%;
+                padding:15px 8px 15px 8px;
+                background: none;
+                border-radius: 8px;
+                color: #fff;
+                border:1px solid #0df5e3;
+                font-size: 20px;
+            }
+        }
+        
+        .button{
+            
+            button{
+                width: 50%;
+                background-color: #0df5e3;
+                padding: 20px;
+                border: none;
+                cursor: pointer;
+                border-radius: 8px;
+                color: #000;
+                font-size: 20px;
+            }
+        }
+        
+    }
+    h4{
+        color: #797878;
+        a{
+            text-decoration: none;
+            color:#0df5e3 ;
+        }
+    }
+}
+
+
+@media (max-width:709px) {
+    #Login{
+        h1{
+            font-size: 55px;
+        }
+    }
+}
+@media (max-width:677px) {
+    #Login{
+        h1{
+            font-size: 45px;
+        }
+    }
+}
+@media (max-width:569px) {
+    #Login{
+        h1{
+            font-size: 38px;
+        }
+    }
+}
+@media (max-width:482px) {
+    #Login{
+        h1{
+            font-size: 30px;
+        }
+    }
+}

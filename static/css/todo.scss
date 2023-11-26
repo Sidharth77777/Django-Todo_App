@@ -1,0 +1,402 @@
+* {
+    box-sizing: border-box;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 3px solid green;
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    background-color: #201a30;
+    @include flex;
+    margin-bottom: 24px;
+    padding: 10px 20px 10px 20px;
+
+    .left {
+        @include flex;
+        gap: 8px;
+
+        h1 {
+            color: #fff;
+        }
+    }
+
+    .img {
+
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .user {
+        @include flex;
+        gap: 50px;
+
+        h2 {
+            color: #fff;
+        }
+
+        .person {
+            @include flex;
+            gap: 10px;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .logout {
+            @include flex;
+            gap: 5px;
+
+            h2 {
+                color: red;
+
+            }
+            .logo{
+                width: 25px;
+                @include center;
+                img{
+                    width: 100%;
+                    
+                }
+            }
+
+        }
+    }
+
+}
+
+.wrapper {
+    @include center;
+    flex-direction: column;
+
+    #Todo {
+        min-width: 80%;
+        min-height: 50vh;
+        max-height: fit-content;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        .Alltasks{
+            
+        }
+
+        .head {
+            width: 100%;
+            height: 80px;
+            background-color: #363942;
+            @include center;
+
+            h1 {
+                color: #fff;
+                font-size: 30px;
+            }
+        }
+
+        .tasks {
+            width: 100%;
+            background-color: #f1f1d5;
+            min-height: 50vh;
+            max-height: fit-content;
+            padding: 10px 20px 10px 20px;
+            .create {
+                @include flex;
+                border-bottom: 1px solid #aaaaaa;
+                padding-bottom: 30px;
+
+                form {
+                    width: 100%;
+                    @include flex;
+
+                    .button {
+
+                        button {
+                            width: 100%;
+                            background-color: #27a744;
+                            border-radius: 8px;
+
+                            cursor: pointer;
+                            padding: 10px;
+                            color: #fff;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .input {
+                    width: 88%;
+                    height: 50px;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 8px;
+                        border: 2px solid #fff;
+                        font-size: 21px;
+                    }
+                }
+            }
+
+            .task {
+                width: 100%;
+                border-bottom: 1px solid #aaaaaa;
+                @include flex;
+                &:hover{
+                    background-color: #efef86;
+                }
+
+                .tick {
+                    @include flex;
+                    gap: 40px;
+                    .given{
+                        @include flex;
+                        gap: 5px;
+                        h2{
+                            font-size: 25px;
+                        }
+                    }
+                    .input {
+                        input {
+                            width: 100%;
+                            height: 50px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .manage{
+                    @include flex;
+                    gap: 25px;
+                    .logo{
+                        
+                        .icon{
+                            width: 100%;
+                            
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+#CompletedTodos{
+    min-width: 80%;
+    min-height: 50vh;
+    max-height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 100px;
+    background-color: #f1f1d5;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    .head{
+        @include center;
+        background-color: #82b54e;
+        color: #fff;
+    }
+    .bg{
+        padding: 10px 20px 10px 20px;
+        .completedIt{
+            @include flex;
+            border-bottom: 1px solid #aaaaaa;
+            &:hover{
+                background-color: #9eba82;
+            }
+            .input{
+                width: 60px;
+                img{
+                    width: 100%;
+                }
+                
+            }
+            .left{
+                @include flex;
+                gap:20px ;
+                h2{
+                    color: green;
+                    text-decoration: line-through;
+                }
+            }
+            .right{
+                @include flex;
+                gap: 25px;
+                .logo{
+                    width: 30px;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        
+    }
+    .deleteAll{
+        @include center;
+        padding: 20px 0;
+        border-bottom: 1px solid #aaaaaa;
+        .button{
+            width: 30%;
+            button{
+                width: 100%;
+                background: none;
+                border: none;
+                cursor: pointer;
+                background-color: red;
+                font-size: 28px;
+                border-radius: 8px;
+                padding: 10px 20px 10px 20px;
+                color: #fff;
+            }
+        }
+    }
+}
+
+#EditTask{
+    @include center;
+    flex-direction: column;
+    .bg{
+        background-color: #201a30;
+        width: 80%;
+        h2{
+            color: #fff;
+            text-align: center;
+            font-size: 30px;
+        }
+    }
+    .edit{
+        min-height: 30vh;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        width: 80%;
+        background-color: #f1f1d5;
+        @include center;
+        flex-direction: column;
+        padding: 0 50px;
+        form{
+            @include flex;
+            gap: 50px;
+            width: 100%;
+            .input{
+                width: 80%;
+                height: 50px;
+                input{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 8px;
+                    border: 2px solid #000;
+                    font-size: 21px;
+                }
+            }
+            .button{
+                width: 20%;
+                button{
+                    width: 100%;
+                    background-color: #27a744;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    padding: 10px;
+                    color: #fff;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1160px) {
+    .tasks{
+        .create{
+            form{
+                gap:10px;
+            }
+            .button{
+                width: 15%;
+            }
+        }
+    }
+}
+
+@media (max-width: 981px) {
+    .tasks{
+        .create{
+            .input{
+                width: 80%;
+            }
+            form{
+                gap:10px;
+            }
+            .button{
+                width: 20%;
+            }
+        }
+    }
+}
+@media (max-width: 788px) {
+    .tasks{
+        .create{
+            .input{
+                width: 70%;
+            }
+            form{
+                gap:10px;
+            }
+            .button{
+                width: 30%;
+            }
+        }
+    }
+}
+@media (max-width: 642px) {
+    .tasks{
+        .create{
+            .input{
+                width: 80%;
+                input{
+                    font-size: 18px;
+                }
+            }
+            form{
+                gap:10px;
+            }
+            .button{
+                width: 20%;
+            }
+        }
+    }
+}
+@media (max-width: 590px) {
+    .tasks{
+        .create{
+            .input{
+                width: 80%;
+                input{
+                    font-size: 15px;
+                }
+            }
+            form{
+                gap:10px;
+            }
+            .button{
+                width: 20%;
+            }
+        }
+    }
+}

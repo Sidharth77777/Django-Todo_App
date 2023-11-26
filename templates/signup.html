@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="{% static './css/signup.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="shortcut icon" href="{% static './images/signup.png' %}" type="image/x-icon">
+</head>
+<body>
+    
+    <div id="SignUp">
+        <div class="img">
+            <img src="{% static './images/signup.png' %}" alt="signup">
+        </div>
+        <h1>Create an Account</h1>
+
+        <form action="" method="POST" class="form">
+            {% csrf_token %}
+            <div class="input">
+                <i class="fa-regular fa-user font"></i>
+                {{form.full_name}}
+            </div>
+            <div class="input flex">
+                <div class="opt">
+                    <i class="fa-solid fa-school font"></i>
+                    <label for="{{form.user_class.id_for_label}}">Class</label>
+                    {{form.user_class}}
+                </div>
+                <div class="opt">
+                    <label for="{{form.user_division.id_for_label}}">Division</label>
+                    {{form.user_division}}
+                </div>
+            </div>
+            <div class="input">
+                <i class="fa-regular fa-envelope font"></i>
+                {{form.email}}
+            </div>
+            <div class="input">
+                <i class="fa-solid fa-lock font"></i>
+                {{form.password}}
+            </div>
+            {% if error %}
+            <p style="color: red;text-align: center;">{{message}}</p>
+            {% endif %}
+            <div class="input button">
+                <button type="submit">SIGN UP</button>
+            </div>
+        </form>
+
+        <h4>Already have an account? <a href="{% url 'users:login' %}">Login</a></h4>
+    </div>
+
+    <script src="{% static './js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static './js/signup.js' %}"></script>
+</body>
+</html>
